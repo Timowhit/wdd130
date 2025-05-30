@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timothy Whitehead | The Medallion Fund</title>
+    <meta name="description" content="A common layout on the web, often called the 'Holy Grail'">
+    <meta name="author" content="Timothy Whitehead">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --text-color: rgb(32, 126, 185);
+
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .header {
+            background: black;
+            padding: 16px 24px;
+            box-shadow: 0 2px 4px grey;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #00d4aa;
+        }
+
+        .logo::before {
+            content: "♊";
+            margin-right: 8px;
+            font-size: 28px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav a:hover {
+            color: #00d4aa;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .sign-in {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .get-started {
+            background: #00d4aa;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .footer-main {
+            background: white;
+            padding: 80px 24px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 80px;
+        }
+
+        .footer-left {
+            flex: 1;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #00d4aa;
+            margin-bottom: 32px;
+        }
+
+        .footer-logo::before {
+            content: "♊";
+            margin-right: 8px;
+            font-size: 28px;
+        }
+
+        .newsletter-signup h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 16px;
+        }
+
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 300px;
+        }
+
+        .email-input {
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .email-input:focus {
+            border-color: #00d4aa;
+        }
+
+        .subscribe-btn {
+            background: #333;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+
+        .footer-links {
+            flex: 2;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+        }
+
+        .footer-column h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 24px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 16px;
+        }
+
+        .footer-column a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .footer-column a:hover {
+            color: #00d4aa;
+        }
+
+        .footer-bottom {
+            background: #1a1a1a;
+            padding: 40px 24px;
+        }
+
+        .footer-bottom-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom-left {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .footer-bottom-logo {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .footer-bottom-logo::before {
+            content: "♊";
+            margin-right: 8px;
+            font-size: 24px;
+        }
+
+        .curated-by {
+            color: #888;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mobbin-logo {
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .social-link:hover {
+            background: #444;
+            color: white;
+        }
+
+        .legal-info {
+            background: white;
+            padding: 24px;
+            font-size: 12px;
+            color: #666;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .legal-links {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .legal-links a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .legal-links a:hover {
+            color: #00d4aa;
+        }
+
+        .app-downloads {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .app-store-btn {
+            background: #000;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #333;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">HolyGrail.html</div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">Prices</a>
+            <a href="#">I</a>
+            <a href="#">Resources</a>
+        </nav>
+        <div class="nav-buttons">
+            <a href="#" class="sign-in">Sign in</a>
+            <a href="#" class="get-started">Get started</a>
+        </div>
+    </header>
+
+    <!-- Main Footer -->
+    <footer class="footer-main">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">GEMINI</div>
+                <div class="newsletter-signup">
+                    <h3>Stay up to date</h3>
+                    <form class="email-form">
+                        <input type="email" class="email-input" placeholder="Email address">
+                        <button type="submit" class="subscribe-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">Exchange</a></li>
+                        <li><a href="#">Mobile</a></li>
+                        <li><a href="#">ActiveTrader</a></li>
+                        <li><a href="#">Gemini Dollar</a></li>
+                        <li><a href="#">Nifty Gateway</a></li>
+                        <li><a href="#">View All</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Prices</a></li>
+                        <li><a href="#">Price Converter</a></li>
+                        <li><a href="#">Gemini Asset Listing Hub</a></li>
+                        <li><a href="#">Gemini Blog</a></li>
+                        <li><a href="#">Trust Center</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Cryptopedia</a></li>
+                        <li><a href="#">Newsroom</a></li>
+                        <li><a href="#">Videos</a></li>
+                        <li><a href="#">Product Updates</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Trust and safety</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Partners</h4>
+                    <ul>
+                        <li><a href="#">Samsung</a></li>
+                        <li><a href="#">Brave</a></li>
+                        <li><a href="#">Referral Program</a></li>
+                        <li><a href="#">Frontier Fund</a></li>
+                        <li><a href="#">View All</a></li>
+                    </ul>
+
+                    <h4 style="margin-top: 32px;">Institutions</h4>
+                    <ul>
+                        <li><a href="#">Institutions Home</a></li>
+                        <li><a href="#">Exchange</a></li>
+                        <li><a href="#">Custody</a></li>
+                        <li><a href="#">eOTC</a></li>
+                        <li><a href="#">Businesses and Private Wealth</a></li>
+                        <li><a href="#">Professional Traders</a></li>
+                        <li><a href="#">Institutional Investors</a></li>
+                        <li><a href="#">Fintechs and Banks</a></li>
+                        <li><a href="#">Bitcoin Miners</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Students</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">System Status</a></li>
+                        <li><a href="#">Areas of Availability</a></li>
+                        <li><a href="#">API Docs</a></li>
+                        <li><a href="#">Marketplace and Fees</a></li>
+                        <li><a href="#">Legal Agreements</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">User Agreement and State Disclosures</a></li>
+                        <li><a href="#">Digital Assets Disclosures</a></li>
+                        <li><a href="#">Do Not Share My Personal Information</a></li>
+                    </ul>
+
+                    <div class="app-downloads">
+                        <a href="#" class="app-store-btn">📱 Download on the App Store</a>
+                        <a href="#" class="app-store-btn">📱 GET IT ON Google Play</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Legal Footer -->
+    <div class="legal-info">
+        <p>Gemini Trust Company, LLC NMLS #1518126. Gemini Moonbase, LLC NMLS #2403509.</p>
+        <p>© Copyright 2025 Gemini Space Station, LLC or its affiliates.</p>
+        <p>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+        
+        <div class="legal-links">
+            <a href="#">Site Policy</a>
+            <a href="#">Legal Notice</a>
+            <div class="language-selector">
+                🌐 English ▼
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Footer -->
+    <footer class="footer-bottom">
+        <div class="footer-bottom-content">
+            <div class="footer-bottom-left">
+                <div class="footer-bottom-logo">Gemini</div>
+                <div class="curated-by">
+                    curated by
+                    <span class="mobbin-logo">⚫ Mobbin</span>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link">𝕏</a>
+                <a href="#" class="social-link">📷</a>
+                <a href="#" class="social-link">💼</a>
+                <a href="#" class="social-link">📺</a>
+                <a href="#" class="social-link">🔗</a>
+                <a href="#" class="social-link">🧵</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
