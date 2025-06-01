@@ -6,17 +6,14 @@
     <title>Timothy Whitehead | The Medallion Fund</title>
     <meta name="description" content="A common layout on the web, often called the 'Holy Grail'">
     <meta name="author" content="Timothy Whitehead">
-    <link rel="stylesheet" href="styles.css">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        :root {
-            --text-color: rgb(32, 126, 185);
 
-        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: #f8f9fa;
@@ -84,64 +81,25 @@
             font-size: 14px;
             font-weight: 500;
         }
-        .left-sidebar::before {
-            content: "😃";
-            margin-right: 8px;
-            font-size: 28px;
-        }
-        .left-sidebar {
-            background: #666;
-            padding: 40px 24px;
-            flex: 2;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-        }
-        .main-content {
-            max-width: 900px;
+
+        .content-wrapper {
+            display: flex;
+            max-width: 1200px;
             margin: 48px auto 0 auto;
-            padding: 40px 24px;
-            background: #fff;
+            gap: 24px;
+            padding: 0 24px;
+        }
+
+        .left-sidebar {
+            flex: 0 0 300px;
+            padding: 24px;
+            background: white;
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0, 212, 170, 0.10);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 18px;
+            height: fit-content;
         }
 
-        .main-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #00d4aa;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-
-        .main-desc {
-            font-size: 16px;
-            color: #666;
-            font-weight: 500;
-            margin-bottom: 6px;
-            line-height: 1.7;
-        }
-        .footer-main {
-            background: white;
-            padding: 80px 18px;
-        }
-
-        .footer-content {
-            max-width: 100%;
-            margin: 0.5rem;
-            display: flex;
-            gap: 80px;
-        }
-
-        .footer-left {
-            flex: 1;
-        }
-
-        .footer-logo {
+        .left-sidebar-logo {
             display: flex;
             align-items: center;
             font-size: 24px;
@@ -150,7 +108,7 @@
             margin-bottom: 32px;
         }
 
-        .footer-logo::before {
+        .left-sidebar-logo::before {
             content: "😃";
             margin-right: 8px;
             font-size: 28px;
@@ -192,6 +150,46 @@
             font-weight: 600;
             cursor: pointer;
             align-self: flex-start;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 40px 24px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 212, 170, 0.10);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 18px;
+        }
+
+        .main-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #00d4aa;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .main-desc {
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 6px;
+            line-height: 1.7;
+        }
+
+        .footer-main {
+            background: white;
+            padding: 80px 18px;
+        }
+
+        .footer-content {
+            max-width: 100%;
+            margin: 0.5rem;
+            display: flex;
+            gap: 80px;
         }
 
         .footer-links {
@@ -348,6 +346,16 @@
             color: #333;
             font-size: 14px;
         }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .left-sidebar {
+                flex: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -365,40 +373,36 @@
             <a href="#" class="get-started">Get started</a>
         </div>
     </header>
-    <!-- Main Content -->
-    <main class="main-content">
-        <h1 class="main-title">Welcome to the Holy Grail Layout</h1>
-        <p class="main-desc"></p>
-            This is a common layout structure used in web design, often referred to as the "Holy Grail" layout.
-        </p>
-        <p class="main-desc">
-            It typically includes a header, footer, main content area, and sidebars.
-        </p>
+
+    <!-- Content Wrapper with Sidebar and Main Content -->
+    <div class="content-wrapper">
+        <!-- Left Sidebar -->
         <div class="left-sidebar">
-           <div class="left-sidebar-logo">GEMINI</div>
-                <div class="newsletter-signup">
-                    <h3>Stay up to date</h3>
-                    <form class="email-form">
-                        <input type="email" class="email-input" placeholder="Email address">
-                        <button type="submit" class="subscribe-btn">Subscribe</button>
-                    </form>
-                </div>
+            <div class="left-sidebar-logo">HolyGrail.html</div>
+            <div class="newsletter-signup">
+                <h3>Stay up to date</h3>
+                <form class="email-form">
+                    <input type="email" class="email-input" placeholder="Email address">
+                    <button type="submit" class="subscribe-btn">Subscribe</button>
+                </form>
+            </div>
         </div>
-    </main>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="main-title">Welcome to the Holy Grail Layout</h1>
+            <p class="main-desc">
+                This is a common layout structure used in web design, often referred to as the "Holy Grail" layout.
+            </p>
+            <p class="main-desc">
+                It typically includes a header, footer, main content area, and sidebars.
+            </p>
+        </main>
+    </div>
+
     <!-- Main Footer -->
     <footer class="footer-main">
         <div class="footer-content">
-            <div class="footer-left">
-                <div class="footer-logo">GEMINI</div>
-                <div class="newsletter-signup">
-                    <h3>Stay up to date</h3>
-                    <form class="email-form">
-                        <input type="email" class="email-input" placeholder="Email address">
-                        <button type="submit" class="subscribe-btn">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-
             <div class="footer-links">
                 <div class="footer-column">
                     <h4>Products</h4>
