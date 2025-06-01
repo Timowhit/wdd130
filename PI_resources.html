@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Holy Grail Layout Code</title>
+    <meta name="description" content="Interactive code viewer for Holy Grail layout implementation">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 20px 32px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00d4aa;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo::before {
+            content: "⚡";
+            font-size: 28px;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 32px;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 32px;
+            min-height: calc(100vh - 120px);
+        }
+
+        .sidebar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .sidebar h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sidebar h2::before {
+            content: "📋";
+            font-size: 18px;
+        }
+
+        .briefing {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #4a5568;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #00d4aa;
+        }
+
+        .briefing h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .briefing ul {
+            margin: 12px 0;
+            padding-left: 20px;
+        }
+
+        .briefing li {
+            margin-bottom: 8px;
+            color: #4a5568;
+        }
+
+        .code-viewer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .code-header {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            padding: 20px 32px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .code-title {
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .file-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .html-icon {
+            background: #e34f26;
+            color: white;
+        }
+
+        .css-icon {
+            background: #1572b6;
+            color: white;
+        }
+
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .code-content {
+            position: relative;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .code-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .code-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .code-content::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+
+        .code-content::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        pre {
+            margin: 0 !important;
+            background: transparent !important;
+            padding: 32px !important;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 16px;
+            }
+            
+            .nav-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .code-header {
+                padding: 16px 20px;
+            }
+            
+            pre {
+                padding: 20px !important;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Code Resources</div>
+            <nav class="nav-tabs">
+                <button class="tab-btn active" onclick="switchTab('html')">HTML Structure</button>
+                <button class="tab-btn" onclick="switchTab('css')">CSS Styling</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <h2>Code Briefing</h2>
+            
+            <div id="html-briefing" class="briefing active">
+                <h3>🏗️ HTML Structure</h3>
+                <p>This HTML document implements the classic "Holy Grail" layout pattern, a fundamental web design structure.</p>
+                
+                <h3 style="margin-top: 20px;">Key Components:</h3>
+                <ul>
+                    <li><strong>Header:</strong> Fixed navigation with logo and menu items</li>
+                    <li><strong>Content Wrapper:</strong> Flexbox container for sidebar and main content</li>
+                    <li><strong>Left Sidebar:</strong> Newsletter signup and branding</li>
+                    <li><strong>Main Content:</strong> Primary content area with flexible width</li>
+                    <li><strong>Footer:</strong> Multi-column footer with links and legal information</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">Layout Strategy:</h3>
+                <p>Uses modern CSS Flexbox for responsive layout that adapts from desktop to mobile. The sidebar maintains fixed width while main content scales dynamically.</p>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Main Sections</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">89</div>
+                        <div class="stat-label">HTML Elements</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Responsive</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="css-briefing" class="briefing">
+                <h3>🎨 CSS Styling</h3>
+                <p>Comprehensive stylesheet that creates a modern, professional appearance with smooth interactions and responsive behavior.</p>
+                
+                <h3 style="margin-top: 20px;">Design Features:</h3>
+                <ul>
+                    <li><strong>Color Scheme:</strong> Teal accent (#00d4aa) with neutral grays</li>
+                    <li><strong>Typography:</strong> System font stack for optimal readability</li>
+                    <li><strong>Layout:</strong> CSS Grid and Flexbox for precise positioning</li>
+                    <li><strong>Effects:</strong> Subtle shadows and hover states</li>
+                    <li><strong>Responsive:</strong> Mobile-first approach with breakpoints</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">Technical Approach:</h3>
+                <p>Modern CSS techniques including CSS Grid for footer columns, Flexbox for navigation, and media queries for responsive breakpoints at 768px.</p>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number">45</div>
+                        <div class="stat-label">CSS Classes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">300+</div>
+                        <div class="stat-label">Style Rules</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Breakpoints</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="code-viewer">
+            <div id="html-content" class="tab-content active">
+                <div class="code-header">
+                    <div class="code-title">
+                        <div class="file-icon html-icon">HTML</div>
+                        pageidea.html
+                    </div>
+                    <button class="copy-btn" onclick="copyCode('html-code')">
+                        📋 Copy Code
+                    </button>
+                </div>
+                <div class="code-content">
+                    <pre><code id="html-code" class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Timothy Whitehead | The Medallion Fund&lt;/title&gt;
+    &lt;meta name="description" content="A common layout on the web, often called the 'Holy Grail'"&gt;
+    &lt;meta name="author" content="Timothy Whitehead"&gt;
+    &lt;link rel="stylesheet" href="pageidea.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Header --&gt;
+    &lt;header class="header"&gt;
+        &lt;div class="logo"&gt;HolyGrail.html&lt;/div&gt;
+        &lt;nav class="nav"&gt;
+            &lt;a href="#"&gt;Home&lt;/a&gt;
+            &lt;a href="#"&gt;Prices&lt;/a&gt;
+            &lt;a href="#"&gt;I&lt;/a&gt;
+            &lt;a href="#"&gt;Resources&lt;/a&gt;
+        &lt;/nav&gt;
+        &lt;div class="nav-buttons"&gt;
+            &lt;a href="#" class="sign-in"&gt;Sign in&lt;/a&gt;
+            &lt;a href="#" class="get-started"&gt;Get started&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;!-- Content Wrapper with Sidebar and Main Content --&gt;
+    &lt;div class="content-wrapper"&gt;
+        &lt;!-- Left Sidebar --&gt;
+        &lt;div class="left-sidebar"&gt;
+            &lt;div class="left-sidebar-logo"&gt;HolyGrail.html&lt;/div&gt;
+            &lt;div class="newsletter-signup"&gt;
+                &lt;h3&gt;Stay up to date&lt;/h3&gt;
+                &lt;form class="email-form"&gt;
+                    &lt;input type="email" class="email-input" placeholder="Email address"&gt;
+                    &lt;button type="submit" class="subscribe-btn"&gt;Subscribe&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Main Content --&gt;
+        &lt;main class="main-content"&gt;
+            &lt;h1 class="main-title"&gt;Welcome to the Holy Grail Layout&lt;/h1&gt;
+            &lt;p class="main-desc"&gt;
+                This is a common layout structure used in web design, often referred to as the "Holy Grail" layout.
+            &lt;/p&gt;
+            &lt;p class="main-desc"&gt;
+                It typically includes a header, footer, main content area, and sidebars.
+            &lt;/p&gt;
+        &lt;/main&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Main Footer --&gt;
+    &lt;footer class="footer-main"&gt;
+        &lt;div class="footer-content"&gt;
+            &lt;div class="footer-links"&gt;
+                &lt;div class="footer-column"&gt;
+                    &lt;h4&gt;Products&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Exchange&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Mobile&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;ActiveTrader&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Gemini Dollar&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Nifty Gateway&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;View All&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+
+                &lt;div class="footer-column"&gt;
+                    &lt;h4&gt;Resources&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Prices&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Price Converter&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Gemini Asset Listing Hub&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Gemini Blog&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Trust Center&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Cryptopedia&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Newsroom&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Videos&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Product Updates&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Security&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Trust and safety&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+
+                &lt;div class="footer-column"&gt;
+                    &lt;h4&gt;Partners&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Samsung&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Brave&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Referral Program&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Frontier Fund&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;View All&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+
+                    &lt;h4 style="margin-top: 32px;"&gt;Institutions&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Institutions Home&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Exchange&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Custody&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;eOTC&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Businesses and Private Wealth&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Professional Traders&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Institutional Investors&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Fintechs and Banks&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Bitcoin Miners&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+
+                &lt;div class="footer-column"&gt;
+                    &lt;h4&gt;Company&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Careers&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Students&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Support Center&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;System Status&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Areas of Availability&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;API Docs&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Marketplace and Fees&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Legal Agreements&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;User Agreement and State Disclosures&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Digital Assets Disclosures&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Do Not Share My Personal Information&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+
+                    &lt;div class="app-downloads"&gt;
+                        &lt;a href="#" class="app-store-btn"&gt;📱 Download on the App Store&lt;/a&gt;
+                        &lt;a href="#" class="app-store-btn"&gt;📱 GET IT ON Google Play&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+    &lt;!-- Legal Footer --&gt;
+    &lt;div class="legal-info"&gt;
+        &lt;p&gt;&amp;copy;&lt;span id="currentYear"&gt;&lt;/span&gt; Timothy Whitehead | &amp;#9728; Arizona, United States of America &amp;#9729; &lt;/p&gt;
+        &lt;p&gt;This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.&lt;/p&gt;
+        
+        &lt;div class="legal-links"&gt;
+            &lt;a href="#"&gt;Site Policy&lt;/a&gt;
+            &lt;a href="#"&gt;Legal Notice&lt;/a&gt;
+            &lt;div class="language-selector"&gt;
+                🌐 English ▼
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Bottom Footer --&gt;
+    &lt;footer class="footer-bottom"&gt;
+        &lt;div class="footer-bottom-content"&gt;
+            &lt;div class="footer-bottom-left"&gt;
+                &lt;div class="footer-bottom-logo"&gt;Gemini&lt;/div&gt;
+                &lt;div class="curated-by"&gt;
+                    curated by
+                    &lt;span class="mobbin-logo"&gt;⚫ Mobbin&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="social-links"&gt;
+                &lt;a href="#" class="social-link"&gt;𝕏&lt;/a&gt;
+                &lt;a href="#" class="social-link"&gt;📷&lt;/a&gt;
+                &lt;a href="#" class="social-link"&gt;💼&lt;/a&gt;
+                &lt;a href="#" class="social-link"&gt;📺&lt;/a&gt;
+                &lt;a href="#" class="social-link"&gt;🔗&lt;/a&gt;
+                &lt;a href="#" class="social-link"&gt;🧵&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+
+            <div id="css-content" class="tab-content">
+                <div class="code-header">
+                    <div class="code-title">
+                        <div class="file-icon css-icon">CSS</div>
+                        pageidea.css
+                    </div>
+                    <button class="copy-btn" onclick="copyCode('css-code')">
+                        📋 Copy Code
+                    </button>
+                </div>
+                <div class="code-content">
+                    <pre><code id="css-code" class="language-css">
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.header {
+    background: black;
+    padding: 16px 24px;
+    box-shadow: 0 2px 4px grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #00d4aa;
+}
+
+.logo::before {
+    content: "😃";
+    margin-right: 8px;
+    font-size: 28px;
+}
+
+.nav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav a:hover {
+    color: #00d4aa;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.sign-in {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.get-started {
+    background: #00d4aa;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.content-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 48px auto 0 auto;
+    gap: 24px;
+    padding: 0 24px;
+}
+
+.left-sidebar {
+    flex: 0 0 300px;
+    padding: 24px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+
+.left-sidebar-logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00d4aa;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.left-sidebar-logo::before {
+    content: "😃";
+    margin-right: 8px;
+    font-size: 24px;
+}
+
+.newsletter-signup h3 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.email-input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.email-input:focus {
+    outline: none;
+    border-color: #00d4aa;
+    box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
+}
+
+.subscribe-btn {
+    background: #00d4aa;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.subscribe-btn:hover {
+    background: #00c19a;
+}
+
+.main-content {
+    flex: 1;
+    padding: 48px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.main-desc {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.footer-main {
+    background: #f8f9fa;
+    padding: 48px 0;
+    margin-top: 48px;
+    border-top: 1px solid #eee;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 8px;
+}
+
+.footer-column a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footer-column a:hover {
+    color: #00d4aa;
+}
+
+.app-downloads {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.app-store-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 12px;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.app-store-btn:hover {
+    background: #555;
+}
+
+.legal-info {
+    background: #f1f3f4;
+    padding: 24px;
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.legal-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.legal-links a {
+    color: #666;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.legal-links a:hover {
+    color: #00d4aa;
+}
+
+.language-selector {
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.footer-bottom {
+    background: #333;
+    padding: 24px 0;
+    color: white;
+}
+
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-bottom-logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00d4aa;
+}
+
+.curated-by {
+    font-size: 12px;
+    color: #999;
+}
+
+.mobbin-logo {
+    color: white;
+    font-weight: 500;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-link {
+    color: #999;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+.social-link:hover {
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+    }
+    
+    .nav {
+        gap: 16px;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        margin: 24px auto 0 auto;
+        padding: 0 16px;
+    }
+    
+    .left-sidebar {
+        flex: none;
+    }
+    
+    .main-content {
+        padding: 24px;
+    }
+    
+    .main-title {
+        font-size: 32px;
+    }
+    
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    
+    .legal-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
