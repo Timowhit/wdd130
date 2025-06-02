@@ -23,7 +23,7 @@
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #2c3e50;
-            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            background: linear-gradient(135deg, --navajo-white 0%, --light-cyan 100%);
         }
 
         .container {
@@ -34,13 +34,13 @@
 
         /* Header */
         header {
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--light-cyan);
             backdrop-filter: blur(10px);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 20px var(--yinmn-blue);
         }
 
         nav {
@@ -77,7 +77,7 @@
         }
 
         .nav-links a:hover {
-            color: #0984e3;
+            color: var(--yinmn-blue);
         }
 
         /* Hero Section */
@@ -86,7 +86,7 @@
             display: flex;
             align-items: center;
             text-align: center;
-            color: white;
+            color: var(--navajo-white);
             position: relative;
             overflow: hidden;
         }
@@ -116,7 +116,7 @@
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 4px var(--yinmn-blue);
             animation: fadeInUp 1s ease-out;
         }
 
@@ -142,7 +142,7 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #fd79a8, #e84393);
+            background: linear-gradient(45deg, var(--navajo-white), var(--imperial-red));
             color: white;
             padding: 15px 30px;
             text-decoration: none;
@@ -150,7 +150,7 @@
             font-weight: bold;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(232, 67, 147, 0.4);
+            box-shadow: 0 4px 15px var(--imperial-red);
             animation: fadeInUp 1s ease-out 0.6s both;
         }
 
@@ -166,10 +166,11 @@
         }
 
         .section-title {
+            font-family: 'Luckiest Guy', cursive;
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #2c3e50;
+            color: var(--yinmn-blue);
         }
 
         .features-grid {
@@ -179,7 +180,7 @@
         }
 
         .feature-card {
-            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            background: linear-gradient(135deg, var(--light-cyan), var(--navajo-white));
             color: white;
             padding: 2rem;
             border-radius: 15px;
@@ -205,7 +206,8 @@
         /* About Section */
         .about {
             padding: 5rem 0;
-            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+            background: linear-gradient(135deg, var(--light-cyan), var(--yinmn-blue));
+            border-radius: 16px;
             color: white;
         }
 
@@ -239,11 +241,11 @@
         .stat-number {
             font-size: 2rem;
             font-weight: bold;
-            color: #fd79a8;
+            color: var(--light-cyan);
         }
 
         .about-image {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--yinmn-blue);
             border-radius: 15px;
             padding: 2rem;
             text-align: center;
@@ -263,7 +265,7 @@
         }
 
         .contact-form {
-            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            background: linear-gradient(135deg, var(--light-cyan), var(--yinmn-blue));
             padding: 2rem;
             border-radius: 15px;
             color: white;
@@ -290,8 +292,8 @@
         }
 
         .submit-btn {
-            background: linear-gradient(45deg, #fd79a8, #e84393);
-            color: white;
+            background: linear-gradient(45deg, var(--navajo-white), var(--yellow));
+            color: black;
             padding: 12px 30px;
             border: none;
             border-radius: 25px;
@@ -302,7 +304,7 @@
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(232, 67, 147, 0.4);
+            box-shadow: 0 4px 15px var(--imperial-red);
         }
 
         .contact-info {
@@ -310,7 +312,7 @@
         }
 
         .contact-info h3 {
-            color: #2c3e50;
+            color: var(--yinmn-blue);
             margin-bottom: 1rem;
         }
 
