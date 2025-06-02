@@ -3,6 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI Resources</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content-wrapper {
+            display: flex;
+            max-width: 1200px;
+            margin: 48px auto 0 auto;
+            gap: 24px;
+            padding: 0 24px;
+        }
+
+        .left-sidebar {
+            flex: 0 0 300px;
+            padding: 24px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+
+        .left-sidebar-logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #00d4aa;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+        }
+
+        .left-sidebar-logo::before {
+            content: "😃";
+            margin-right: 8px;
+            font-size: 24px;
+        }
+
+        .newsletter-signup h3 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .email-input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .email-input:focus {
+            outline: none;
+            border-color: #00d4aa;
+            box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
+        }
+
+        .subscribe-btn {
+            background: #00d4aa;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .subscribe-btn:hover {
+            background: #00c19a;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 48px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .main-desc {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .footer-main {
+            background: #f8f9fa;
+            padding: 48px 0;
+            margin-top: 48px;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px;
+        }
+
+        .footer-column h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 16px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 8px;
+        }
+
+        .footer-column a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: #00d4aa;
+        }
+
+        .app-downloads {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .app-store-btn {
+            display: inline-block;
+            padding: 8px 12px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 12px;
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+
+        .app-store-btn:hover {
+            background: #555;
+        }
+
+        .legal-info {
+            background: #f1f3f4;
+            padding: 24px;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .legal-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .legal-links a:hover {
+            color: #00d4aa;
+        }
+
+        .language-selector {
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .footer-bottom {
+            background: #333;
+            padding: 24px 0;
+            color: white;
+        }
+
+        .footer-bottom-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-bottom-logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #00d4aa;
+        }
+
+        .curated-by {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .mobbin-logo {
+            color: white;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-link {
+            color: #999;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.2s;
+        }
+
+        .social-link:hover {
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 16px;
+                padding: 16px;
+            }
+            
+            .nav {
+                gap: 16px;
+            }
+            
+            .content-wrapper {
+                flex-direction: column;
+                margin: 24px auto 0 auto;
+                padding: 0 16px;
+            }
+            
+            .left-sidebar {
+                flex: none;
+            }
+            
+            .main-content {
+                padding: 24px;
+            }
+            
+            .main-title {
+                font-size: 32px;
+            }
+            
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+            
+            .legal-links {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="week02/holygrail.html">HolyGrail.html</a>
+            <a href="styles.css">Styles.css</a>
+            <a href="pageidea.html">Pageidea.html</a>
+            <a href="rafting_website.html">Rafting Website</a>
+        </nav>
+    </header>
+    <main>
+        <h1>PI Resources</h1>
+        <p>Welcome to the PI Resources page. Here you will find various resources related to the course.</p>
+    </main>
+    <footer>
+        <p>&copy;2025 Timothy Whitehead | &#9728; Arizona, United States of America &#9729; </p>
+    </footer>
+</body>
+</html>
+
+
     <title>Resources - Holy Grail Layout Code</title>
     <meta name="description" content="Interactive code viewer for Holy Grail layout implementation">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
@@ -129,6 +450,11 @@
             padding: 20px;
             border-radius: 12px;
             border-left: 4px solid #00d4aa;
+            display: none;
+        }
+
+        .briefing.active {
+            display: block;
         }
 
         .briefing h3 {
@@ -287,6 +613,11 @@
         .stat-label {
             font-size: 12px;
             opacity: 0.9;
+        }
+
+        .copy-success {
+            background: #48bb78 !important;
+            color: white !important;
         }
 
         @media (max-width: 1024px) {
@@ -583,6 +914,69 @@
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/footer&gt;
+
+    &lt;script&gt;
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Tab switching functionality
+        function switchTab(tabName) {
+            // Update tab buttons
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update content sections
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+            document.getElementById(tabName + '-content').classList.add('active');
+
+            // Update sidebar briefings
+            const briefings = document.querySelectorAll('.briefing');
+            briefings.forEach(briefing => briefing.classList.remove('active'));
+            document.getElementById(tabName + '-briefing').classList.add('active');
+        }
+
+        // Copy code functionality
+        function copyCode(codeId) {
+            const codeElement = document.getElementById(codeId);
+            const text = codeElement.textContent;
+            
+            navigator.clipboard.writeText(text).then(function() {
+                // Show success feedback
+                const button = event.target.closest('.copy-btn');
+                const originalText = button.innerHTML;
+                
+                button.innerHTML = '✅ Copied!';
+                button.classList.add('copy-success');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('copy-success');
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Failed to copy: ', err);
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                
+                const button = event.target.closest('.copy-btn');
+                const originalText = button.innerHTML;
+                
+                button.innerHTML = '✅ Copied!';
+                button.classList.add('copy-success');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('copy-success');
+                }, 2000);
+            });
+        }
+    &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
                 </div>
@@ -599,8 +993,7 @@
                     </button>
                 </div>
                 <div class="code-content">
-                    <pre><code id="css-code" class="language-css">
-{
+                    <pre><code id="css-code" class="language-css">* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -652,320 +1045,4 @@ body {
     color: #00d4aa;
 }
 
-.nav-buttons {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-}
-
-.sign-in {
-    color: #666;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.get-started {
-    background: #00d4aa;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.content-wrapper {
-    display: flex;
-    max-width: 1200px;
-    margin: 48px auto 0 auto;
-    gap: 24px;
-    padding: 0 24px;
-}
-
-.left-sidebar {
-    flex: 0 0 300px;
-    padding: 24px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    height: fit-content;
-}
-
-.left-sidebar-logo {
-    font-size: 20px;
-    font-weight: bold;
-    color: #00d4aa;
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-}
-
-.left-sidebar-logo::before {
-    content: "😃";
-    margin-right: 8px;
-    font-size: 24px;
-}
-
-.newsletter-signup h3 {
-    font-size: 18px;
-    margin-bottom: 16px;
-    color: #333;
-}
-
-.email-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.email-input {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-.email-input:focus {
-    outline: none;
-    border-color: #00d4aa;
-    box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
-}
-
-.subscribe-btn {
-    background: #00d4aa;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.subscribe-btn:hover {
-    background: #00c19a;
-}
-
-.main-content {
-    flex: 1;
-    padding: 48px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.main-title {
-    font-size: 48px;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 24px;
-    line-height: 1.2;
-}
-
-.main-desc {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #666;
-    margin-bottom: 16px;
-}
-
-.footer-main {
-    background: #f8f9fa;
-    padding: 48px 0;
-    margin-top: 48px;
-    border-top: 1px solid #eee;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-.footer-links {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 48px;
-}
-
-.footer-column h4 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 16px;
-}
-
-.footer-column ul {
-    list-style: none;
-}
-
-.footer-column li {
-    margin-bottom: 8px;
-}
-
-.footer-column a {
-    color: #666;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.2s;
-}
-
-.footer-column a:hover {
-    color: #00d4aa;
-}
-
-.app-downloads {
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.app-store-btn {
-    display: inline-block;
-    padding: 8px 12px;
-    background: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 12px;
-    text-align: center;
-    transition: background-color 0.2s;
-}
-
-.app-store-btn:hover {
-    background: #555;
-}
-
-.legal-info {
-    background: #f1f3f4;
-    padding: 24px;
-    text-align: center;
-    color: #666;
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-.legal-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    margin-top: 16px;
-}
-
-.legal-links a {
-    color: #666;
-    text-decoration: none;
-    font-size: 12px;
-}
-
-.legal-links a:hover {
-    color: #00d4aa;
-}
-
-.language-selector {
-    cursor: pointer;
-    font-size: 12px;
-}
-
-.footer-bottom {
-    background: #333;
-    padding: 24px 0;
-    color: white;
-}
-
-.footer-bottom-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-bottom-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.footer-bottom-logo {
-    font-size: 20px;
-    font-weight: bold;
-    color: #00d4aa;
-}
-
-.curated-by {
-    font-size: 12px;
-    color: #999;
-}
-
-.mobbin-logo {
-    color: white;
-    font-weight: 500;
-}
-
-.social-links {
-    display: flex;
-    gap: 16px;
-}
-
-.social-link {
-    color: #999;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.2s;
-}
-
-.social-link:hover {
-    color: white;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        gap: 16px;
-        padding: 16px;
-    }
-    
-    .nav {
-        gap: 16px;
-    }
-    
-    .content-wrapper {
-        flex-direction: column;
-        margin: 24px auto 0 auto;
-        padding: 0 16px;
-    }
-    
-    .left-sidebar {
-        flex: none;
-    }
-    
-    .main-content {
-        padding: 24px;
-    }
-    
-    .main-title {
-        font-size: 32px;
-    }
-    
-    .footer-links {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-    }
-    
-    .footer-bottom-content {
-        flex-direction: column;
-        gap: 16px;
-        text-align: center;
-    }
-    
-    .legal-links {
-        flex-direction: column;
-        gap: 12px;
-    }
-}
+.
