@@ -10,7 +10,7 @@
         .about {
             padding: 5rem 0;
             background: linear-gradient(135deg, var(--light-cyan), var(--yinmn-blue));
-            border-radius: 16px;
+            border-radius: 16px; 
             color: white;
         }
 
@@ -51,87 +51,7 @@
             background: var(--yinmn-blue);
             border-radius: 15px;
             padding: 2rem;
+            margin-right: 10px;
             text-align: center;
             backdrop-filter: blur(10px);
         }
-
-        /* Contact Section */
-        .contact {
-            padding: 5rem 0;
-            background: white;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .contact-form {
-            background: linear-gradient(135deg, var(--light-cyan), var(--yinmn-blue));
-            padding: 2rem;
-            border-radius: 15px;
-            color: white;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .submit-btn {
-            background: linear-gradient(45deg, var(--navajo-white), var(--yellow));
-            color: black;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px var(--imperial-red);
-        }
-
-        .contact-info {
-            padding: 2rem;
-        }
-
-        .contact-info h3 {
-            color: var(--yinmn-blue);
-            margin-bottom: 1rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            color: #636e72;
-        }
-
-        .contact-item::before {
-            content: "📍";
-            margin-right: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .contact-item:nth-child(3)::before { content: "📞"; }
-        .contact-item:nth-child(3)::before { content: "📞"; }
-        .contact-item:nth-child(4)::before { content: "✉️"; }
