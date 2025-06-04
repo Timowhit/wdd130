@@ -138,6 +138,11 @@ main img {
     height: 200px;
     object-fit: cover;
 }
+aside img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
 
 /* Footer */
 footer {
