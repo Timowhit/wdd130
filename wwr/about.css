@@ -417,3 +417,31 @@ html {
         color: #333;
     }
 }
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    width: 100%;
+    margin: 0;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 0 0 20px 20px;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #a5b4fc;
+    text-decoration: none;
+    outline: 2px solid #a5b4fc;
+    outline-offset: 2px;
+}
