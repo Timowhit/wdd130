@@ -98,11 +98,11 @@ aside {
 h1 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: black;
     background: linear-gradient(135deg, #667eea, #764ba2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: transparent;
     font-weight: 700;
 }
 
@@ -120,7 +120,7 @@ p {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    padding: auto;
+    padding: 0 1rem;
 }
 
 /* Images */
