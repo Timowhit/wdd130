@@ -25,6 +25,9 @@ header {
 nav {
     display: flex;
     justify-content: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     gap: 2rem;
     padding: 1rem 2rem;
     max-width: 1200px;
@@ -34,6 +37,7 @@ nav {
 nav a {
     text-decoration: none;
     color: #333;
+    display: block;
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 25px;
@@ -94,6 +98,7 @@ aside {
 h1 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
+    color: black;
     background: linear-gradient(135deg, #667eea, #764ba2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -115,6 +120,7 @@ p {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    padding: auto;
 }
 
 /* Images */
@@ -125,6 +131,8 @@ img {
     transition: transform 0.3s ease;
     max-width: 100%;
     height: auto;
+    border: white 1px solid;
+    padding: 0% 0.5rem;
 }
 
 img:hover {
