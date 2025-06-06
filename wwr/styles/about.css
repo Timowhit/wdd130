@@ -35,7 +35,7 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    font-size: 1.8rem;
+    font-size: 1rem;
     font-weight: bold;
     background: linear-gradient(135deg, #667eea, #764ba2);
     -webkit-background-clip: text;
@@ -90,6 +90,24 @@ nav {
 }
 
 /* Hero Section */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #764ba2;
+    border-radius: 20px;
+    margin-top: 1rem;
+    max-width: 1200px;
+    padding: 0.5rem;
+    overflow: hidden;
+
+}
+
 .hero {
     min-height: 80vh;
     display: flex;
