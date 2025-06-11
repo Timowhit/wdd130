@@ -458,8 +458,8 @@ figure img:hover {
 }
 
 .submit-btn {
-    background:linear-gradient(45deg,var(--darker-blue),var(--yellow));
-    color:#000;
+    background:linear-gradient(45deg,var(--darker-blue),var(--lavender));
+    color:#fff;
     padding:12px 30px;
     border:none;
     border-radius:25px;
