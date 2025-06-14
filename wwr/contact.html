@@ -11,16 +11,20 @@
     <meta name="author" content="Timothy Whitehead">
 </head>
 <body>
-    <header>
-        <img src="images/logo.jpeg" alt="RapidRush Adventures logo" class="logo">
-        <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="trips.html">Trips</a>
-                <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-    <main>
+<header>
+    <img src="images/logo.jpeg" alt="RapidRush Adventures logo" class="logo">
+    <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="trips.html">Trips</a>
+            <a href="contact.html">Contact</a>
+    </nav>
+</header>
+<main>
+    <div class="hero-section">
+        <img src="images/hero-image.jpg" alt="White water rafting adventure" class="hero-image">
+        <img src="images/team-photo.jpg" alt="Our professional rafting team" class="team-image">
+    </div>
         <div class="about">
             <h1>Contact Us</h1>
             <address>
@@ -30,6 +34,20 @@
             <p>Phone: <a href="tel:+13035551234">(303) 555-1234</a></p>
             <p>Email: <a href="mailto:info@rapidrushadventures.com">info@rapidrushadventures.com</a></p>
             </address>
+            <section class="contact-form-section">
+    <h2>Send us a Message</h2>
+    <form class="contact-form" action="/submit-contact" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
             <div class="map-container" style="margin-top: 1em;">
             <iframe
                 src="https://www.google.com/maps?q=123+River+Road,+Rapidsville,+CO+80401&output=embed"
@@ -37,6 +55,7 @@
                 referrerpolicy="no-referrer-when-downgrade"
                 title="RapidRush Adventures Location"></iframe>
             </div>
+            </section>
         </div>
         <div class="employee-photos-container">
             <h2>Meet Our Team</h2>
@@ -54,19 +73,15 @@
                     <figcaption>Samantha Brooks<br><small>Customer Relations</small></figcaption>
                 </figure>
             </div>
-        </section>
-        <div class="left-sidebar">
-            <div class="left-sidebar-logo">HolyGrail.html</div>
-            <div class="newsletter-signup">
-                <h3>Stay up to date</h3>
-                <form class="email-form">
-                    <input type="email" class="email-input" placeholder="Email address">
-                    <button type="submit" class="subscribe-btn">Subscribe</button>
-                </form>
-            </div>
-        </div>
-
-    </main>
+    </div>
+</main>
+<div class="left-sidebar">
+    <form class="email-form" action="/newsletter-signup" method="post">
+        <label for="newsletter-email">Email address:</label>
+        <input type="email" id="newsletter-email" name="newsletter-email" class="email-input" placeholder="Email address" required>
+        <button type="submit" class="subscribe-btn">Subscribe</button>
+    </form>
+</div>
     <footer>
         <div class="footer-links">
             <a href="https://facebook.com">
