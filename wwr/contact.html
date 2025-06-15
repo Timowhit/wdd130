@@ -66,24 +66,10 @@
     </article>
     <form action="/action_page.php">
         <p>Subscribe to our Newsletter</p>
-        <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname"><br>
-        <label for="email">Please enter your email:</label><br>
-        <input type="email" id="email" name="email"><br>
-        <fieldset>
-            <legend>How may we help you today?</legend>
-            <input type="radio" id="general-inquiry" name="help_type" value="General Inquiry">
-            <label for="general-inquiry">General Inquiry</label><br>
-            <input type="radio" id="reservation-question" name="help_type" value="Reservation Question">
-            <label for="reservation-question">Reservation Question</label><br>
-            <input type="radio" id="website-suggestion" name="help_type" value="Website Suggestion">
-            <label for="website-suggestion">Website Suggestion</label><br>
-        </fieldset>
-        <input type="checkbox" id="newsletter" name="newsletter">
-        <label for="newsletter">Please subscribe me to the monthly newsletter</label><br>
-        <input type="submit" value="Submit">
+        <textarea id="fname" name="fname" placeholder="First name"></textarea><br>
+        <textarea id="lname" name="lname" placeholder="Last name"></textarea><br>
+        <textarea id="email" name="email" placeholder="Please enter your email"></textarea><br>
+        <button type="button" onclick="alert('Thank you for subscribing!')">Subscribe</button>
     </form>
 </main>
 <footer>
