@@ -24,30 +24,18 @@
     <div class="hero-section">
         <img src="images/hero-image.jpg" alt="White water rafting adventure" class="hero-image">
         <img src="images/team-photo.jpg" alt="Our professional rafting team" class="team-image">
-    </div>
-        <div class="about">
-            <h1>Contact Us</h1>
-            <address>
-            <p><strong>RapidRush Adventures</strong></p>
-            <p>123 River Road<br>
-            Rapidsville, CO 80401</p>
-            <p>Phone: <a href="tel:+13035551234">(303) 555-1234</a></p>
-            <p>Email: <a href="mailto:info@rapidrushadventures.com">info@rapidrushadventures.com</a></p>
-            </address>
-            <section class="contact-form-section">
-    <h2>Send us a Message</h2>
-    <form class="contact-form" action="/submit-contact" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit">Send Message</button>
-    </form>
+    <article>
+        <h1>Contact Us</h1>
+        <address>
+        <p><strong>RapidRush Adventures</strong></p>
+        <p>123 River Road<br>
+        Rapidsville, CO 80401</p>
+        <p>Phone: <a href="tel:+13035551234">(303) 555-1234</a></p>
+        <p>Email: <a href="mailto:info@rapidrushadventures.com">info@rapidrushadventures.com</a></p>
+        </address>
+    </article>
+        <section class="contact-form-section">
+        <h2>Send us a Message</h2>
             <div class="map-container" style="margin-top: 1em;">
             <iframe
                 src="https://www.google.com/maps?q=123+River+Road,+Rapidsville,+CO+80401&output=embed"
@@ -57,7 +45,7 @@
             </div>
             </section>
         </div>
-        <div class="employee-photos-container">
+        <article>
             <h2>Meet Our Team</h2>
             <div class="photo-gallery">
                 <figure>
@@ -73,15 +61,27 @@
                     <figcaption>Samantha Brooks<br><small>Customer Relations</small></figcaption>
                 </figure>
             </div>
-    </div>
+        </article>
 </main>
-<div class="left-sidebar">
-    <form class="email-form" action="/newsletter-signup" method="post">
-        <label for="newsletter-email">Email address:</label>
-        <input type="email" id="newsletter-email" name="newsletter-email" class="email-input" placeholder="Email address" required>
-        <button type="submit" class="subscribe-btn">Subscribe</button>
+<form action="/action_page.php">
+        <p> Newsletter</p>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <label for="email">Please enter your email:</label><br>
+        <input type="text" id="email" name="email"><br>
+        <p> How may we help you today?</p>
+        <input type="radio" id="html" name="fav_language" value="HTML">
+        <label for="General Inquiry">General Inquiry</label><br>
+        <input type="radio" id="css" name="fav_language">
+        <label for="reservation question">Reservation Question</label><br>
+        <input type="radio" id="javascript" name="fav_language">
+        <label for="Website Suggestion">Website Suggestion</label><br>
+        <input type="checkbox" id="newsletter" name="newsletter">
+        <label for="vehicle1">Please subscribe me to the monthly newsletter</label><br>
+        <input type="submit" value="Submit">
     </form>
-</div>
     <footer>
         <div class="footer-links">
             <a href="https://facebook.com">
