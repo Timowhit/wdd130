@@ -72,13 +72,15 @@
         <input type="text" id="lname" name="lname"><br>
         <label for="email">Please enter your email:</label><br>
         <input type="email" id="email" name="email"><br>
-        <p>How may we help you today?</p>
-        <input type="radio" id="general-inquiry" name="help_type" value="General Inquiry">
-        <label for="general-inquiry">General Inquiry</label><br>
-        <input type="radio" id="reservation-question" name="help_type" value="Reservation Question">
-        <label for="reservation-question">Reservation Question</label><br>
-        <input type="radio" id="website-suggestion" name="help_type" value="Website Suggestion">
-        <label for="website-suggestion">Website Suggestion</label><br>
+        <fieldset>
+            <legend>How may we help you today?</legend>
+            <input type="radio" id="general-inquiry" name="help_type" value="General Inquiry">
+            <label for="general-inquiry">General Inquiry</label><br>
+            <input type="radio" id="reservation-question" name="help_type" value="Reservation Question">
+            <label for="reservation-question">Reservation Question</label><br>
+            <input type="radio" id="website-suggestion" name="help_type" value="Website Suggestion">
+            <label for="website-suggestion">Website Suggestion</label><br>
+        </fieldset>
         <input type="checkbox" id="newsletter" name="newsletter">
         <label for="newsletter">Please subscribe me to the monthly newsletter</label><br>
         <input type="submit" value="Submit">
