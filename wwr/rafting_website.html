@@ -7,91 +7,100 @@
     <title>Timothy Whitehead | wwr</title>
     <meta name="description" content="Timothy Whitehead's wwr Portfolio">
     <meta name="author" content="Timothy Whitehead">
-    
-    
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">RapidRush Adventures</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="trips.html">Trips</a></li>
-                <li><a href="contact.html">Contact</a></li>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__logo">RapidRush Adventures</div>
+            <ul class="nav__links">
+                <li><a href="index.html" class="nav__link">Home</a></li>
+                <li><a href="about.html" class="nav__link">About</a></li>
+                <li><a href="trips.html" class="nav__link">Trips</a></li>
+                <li><a href="contact.html" class="nav__link">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="main">
         <section id="home" class="hero">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Experience the Ultimate Whitewater Adventure</h1>
-                    <p>Join us for heart-pounding rapids, breathtaking scenery, and unforgettable memories on the wildest rivers. Perfect for thrill-seekers, families, and adventure enthusiasts of all skill levels.</p>
-                    <a href="#contact" class="cta-button">Book Your Adventure Today</a>
+                <div class="hero__content">
+                    <h1 class="hero__title">Experience the Ultimate Whitewater Adventure</h1>
+                    <p class="hero__subtitle">Join us for heart-pounding rapids, breathtaking scenery, and unforgettable memories on the wildest rivers. Perfect for thrill-seekers, families, and adventure enthusiasts of all skill levels.</p>
+                    <a href="#contact" class="hero__cta">Book Your Adventure Today</a>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <section id="contact" class="section contact">
             <div class="container">
-                <h2 class="section-title">Ready for Your Adventure?</h2>
-                <div class="contact-content">
-                    <form class="contact-form" onsubmit="handleSubmit(event)">
-                        <h3>Book Your Trip</h3>
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
+                <h2 class="section__title">Ready for Your Adventure?</h2>
+                <div class="contact__content">
+                    <form class="form contact__form" onsubmit="handleSubmit(event)">
+                        <h3 class="form__title">Book Your Trip</h3>
+                        
+                        <div class="form__group">
+                            <label for="name" class="form__label">Full Name</label>
+                            <input type="text" id="name" name="name" required class="form__input">
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
+                        
+                        <div class="form__group">
+                            <label for="email" class="form__label">Email Address</label>
+                            <input type="email" id="email" name="email" required class="form__input">
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required>
+                        
+                        <div class="form__group">
+                            <label for="phone" class="form__label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required class="form__input">
                         </div>
-                        <div class="form-group">
-                            <label for="adventure">Adventure Type</label>
-                            <select id="adventure" name="adventure" style="width: 100%; padding: 12px; border: none; border-radius: 8px; font-size: 1rem; background: rgba(255, 255, 255, 0.9);">
+                        
+                        <div class="form__group">
+                            <label for="adventure" class="form__label">Adventure Type</label>
+                            <select id="adventure" name="adventure" class="form__select">
                                 <option>Family-Friendly Rapids</option>
                                 <option>Extreme Adventures</option>
                                 <option>Multi-Day Expeditions</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Special Requests or Questions</label>
-                            <textarea id="message" name="message" rows="4"></textarea>
+                        
+                        <div class="form__group">
+                            <label for="message" class="form__label">Special Requests or Questions</label>
+                            <textarea id="message" name="message" rows="4" class="form__textarea"></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">Send Booking Request</button>
+                        
+                        <button type="submit" class="form__button">Send Booking Request</button>
                     </form>
-                    <div class="contact-info">
-                        <h3>Get In Touch</h3>
-                        <div class="contact-item">123 River Valley Road, Adventure Springs, CO 80424</div>
-                        <div class="contact-item">(555) RAPIDS-1 / (555) 727-4371</div>
-                        <div class="contact-item">info@rapidrushadventures.com</div>
-                        <br>
-                        <h3>Operating Season</h3>
-                        <p><strong>Peak Season:</strong> May - September<br>
-                        <strong>Hours:</strong> 7:00 AM - 6:00 PM Daily<br>
-                        <strong>Off-Season:</strong> Limited weekend trips available</p>
-                        <br>
-                        <h3>What's Included</h3>
-                        <p>✅ Professional guide & safety briefing<br>
-                        ✅ All rafting equipment & safety gear<br>
-                        ✅ Riverside lunch (full-day trips)<br>
-                        ✅ Transportation from meeting point<br>
-                        ✅ Complimentary photos of your adventure</p>
+                    
+                    <div class="contact__info">
+                        <h3 class="contact__info-title">Get In Touch</h3>
+                        <div class="contact__info-item">123 River Valley Road, Adventure Springs, CO 80424</div>
+                        <div class="contact__info-item">(555) RAPIDS-1 / (555) 727-4371</div>
+                        <div class="contact__info-item">info@rapidrushadventures.com</div>
+                        
+                        <h3 class="contact__info-title">Operating Season</h3>
+                        <p class="contact__info-text">
+                            <strong>Peak Season:</strong> May - September<br>
+                            <strong>Hours:</strong> 7:00 AM - 6:00 PM Daily<br>
+                            <strong>Off-Season:</strong> Limited weekend trips available
+                        </p>
+                        
+                        <h3 class="contact__info-title">What's Included</h3>
+                        <p class="contact__info-text">
+                            ✅ Professional guide & safety briefing<br>
+                            ✅ All rafting equipment & safety gear<br>
+                            ✅ Riverside lunch (full-day trips)<br>
+                            ✅ Transportation from meeting point<br>
+                            ✅ Complimentary photos of your adventure
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 RapidRush Adventures. All rights reserved. | Licensed & Insured | Follow us for adventure updates!</p>
+    <footer class="footer">
+        <div class="footer__content container">
+            <p class="footer__text">&copy; 2024 RapidRush Adventures. All rights reserved. | Licensed & Insured | Follow us for adventure updates!</p>
         </div>
     </footer>
 
@@ -102,14 +111,11 @@
             const formData = new FormData(event.target);
             const data = Object.fromEntries(formData);
             
-            // Simulate form submission
             alert(`Thank you, ${data.name}! Your booking request for "${data.adventure}" has been received. We'll contact you within 24 hours at ${data.email} to confirm your adventure details.`);
             
-            // Reset form
             event.target.reset();
         }
 
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -123,7 +129,6 @@
             });
         });
 
-        // Add scroll effect to header
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
