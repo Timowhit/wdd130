@@ -12,7 +12,6 @@
 </head>
 <body>
 <header>
-
     <img class="logo" src="images/logo.jpeg" alt="RapidRush Adventures logo">
     <h2 class="logo-text">RapidRush Adventures</h2>
     <nav class="nav-links">
@@ -40,7 +39,7 @@
             <h2>Send us a Message</h2>
             <div class="map-container" style="margin-top: 1em;">
                 <iframe
-                    src="https://www.google.com/maps?q=123+River+Road,+Rapidsville,+CO+80401&output=embed"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.398!2d-105.017!3d39.739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDQ0JzIwLjQiTiAxMDXCsDAxJzAxLjIiVw!5e0!3m2!1sen!2sus!4v1234567890"
                     width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
                     title="RapidRush Adventures Location"></iframe>
@@ -64,12 +63,44 @@
             </figure>
         </div>
     </article>
-    <form action="/action_page.php">
-        <p>Subscribe to our Newsletter</p>
-        <textarea id="fname" name="fname" placeholder="First name"></textarea><br>
-        <textarea id="lname" name="lname" placeholder="Last name"></textarea><br>
-        <textarea id="email" name="email" placeholder="Please enter your email"></textarea><br>
-        <button type="button" onclick="alert('Thank you for subscribing!')">Subscribe</button>
+    <form action="/action_page.php" method="post">
+        <fieldset>
+            <legend>Subscribe to our Newsletter</legend>
+            
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" placeholder="First name" required><br>
+            
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" placeholder="Last name" required><br>
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Please enter your email" required><br>
+            
+            <label for="trip-type">Preferred Trip Type:</label>
+            <input type="radio" id="family" name="trip-type" value="family">
+            <label for="family">Family Adventure</label>
+            
+            <input type="radio" id="extreme" name="trip-type" value="extreme">
+            <label for="extreme">Extreme Rapids</label>
+            
+            <input type="radio" id="scenic" name="trip-type" value="scenic">
+            <label for="scenic">Scenic Float</label><br>
+            
+            <label for="experience">Experience Level:</label>
+            <input type="checkbox" id="beginner" name="experience" value="beginner">
+            <label for="beginner">Beginner</label>
+            
+            <input type="checkbox" id="intermediate" name="experience" value="intermediate">
+            <label for="intermediate">Intermediate</label>
+            
+            <input type="checkbox" id="advanced" name="experience" value="advanced">
+            <label for="advanced">Advanced</label><br>
+            
+            <label for="message">Additional Comments:</label>
+            <textarea id="message" name="message" placeholder="Tell us about your adventure preferences" rows="4" cols="50"></textarea><br>
+            
+            <button type="submit">Subscribe</button>
+        </fieldset>
     </form>
 </main>
 <footer>
