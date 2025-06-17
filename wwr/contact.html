@@ -116,17 +116,13 @@
                         </div>
 
                         <div class="form__group">
-                            <span class="form__label">Preferred Trip Duration:</span>
-                            <div class="form__checkbox-group">
-                                <input type="checkbox" id="half-day" name="duration" value="half-day" class="form__checkbox">
-                                <label for="half-day" class="form__checkbox-label">Half Day</label>
-
-                                <input type="checkbox" id="full-day" name="duration" value="full-day" class="form__checkbox">
-                                <label for="full-day" class="form__checkbox-label">Full Day</label>
-
-                                <input type="checkbox" id="multi-day" name="duration" value="multi-day" class="form__checkbox">
-                                <label for="multi-day" class="form__checkbox-label">Multi-Day</label>
-                            </div>
+                            <label for="duration" class="form__label">Preferred Trip Duration:</label>
+                            <select id="duration" name="duration" class="form__select">
+                                <option value="">Select duration...</option>
+                                <option value="half-day">Half Day</option>
+                                <option value="full-day">Full Day</option>
+                                <option value="multi-day">Multi-Day</option>
+                            </select>
                         </div>
 
                         <div class="form__group">
