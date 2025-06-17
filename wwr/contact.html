@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/rafting.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Timothy Whitehead | Contact</title>
     <meta name="description" content="Timothy Whitehead's wwr Portfolio - Contact RapidRush Adventures">
     <meta name="author" content="Timothy Whitehead">
@@ -128,14 +130,16 @@
                         <div class="form__group">
                             <span class="form__label">Experience Level:</span>
                             <div class="form__checkbox-group">
-                                <input type="checkbox" id="beginner" name="experience" value="beginner" class="form__checkbox">
-                                <label for="beginner" class="form__checkbox-label">Beginner</label>
-                                
-                                <input type="checkbox" id="intermediate" name="experience" value="intermediate" class="form__checkbox">
-                                <label for="intermediate" class="form__checkbox-label">Intermediate</label>
-                                
-                                <input type="checkbox" id="advanced" name="experience" value="advanced" class="form__checkbox">
-                                <label for="advanced" class="form__checkbox-label">Advanced</label>
+                                <select id="experience" name="experience" class="form__select">
+                                    <option value="">Select experience level...</option>
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                    <option value="other">Other</option>
+                                </select>
+
+                                <input type="checkbox" id="same-day" name="experience" value="same-day" class="form__checkbox">
+                                <label for="same-day" class="form__checkbox-label">Same day booking</label>
                             </div>
                         </div>
                         
