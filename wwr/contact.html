@@ -4,41 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/rafting.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Timothy Whitehead | Contact</title>
-    <meta name="description" content="Timothy Whitehead's wwr/contact Portfolio">
+    <meta name="description" content="Timothy Whitehead's wwr Portfolio - Contact RapidRush Adventures">
     <meta name="author" content="Timothy Whitehead">
 </head>
 <body>
     <header class="header">
-        <img class="nav__logo-img" src="images/logo.jpeg" alt="RapidRush Adventures logo">
-        <nav class="nav">
-            <a href="index.html" class="nav__link">Home</a>
-            <a href="about.html" class="nav__link">About</a>
-            <a href="trips.html" class="nav__link">Trips</a>
-            <a href="contact.html" class="nav__link">Contact</a>
+        <nav class="nav container">
+            <h1 class="nav__logo">RapidRush Adventures</h1>
+            <ul class="nav__links">
+                <li><a href="index.html" class="nav__link">Home</a></li>
+                <li><a href="about.html" class="nav__link">About</a></li>
+                <li><a href="trips.html" class="nav__link">Trips</a></li>
+                <li><a href="contact.html" class="nav__link">Contact</a></li>
+            </ul>
         </nav>
     </header>
     
     <main class="main">
-        <div class="hero">
-            <img src="images/hero-image.jpg" alt="White water rafting adventure" class="hero__image">
-            <img src="images/team-photo.jpg" alt="Our professional rafting team" class="hero__team-image">
-            
-            <article class="contact-info">
-                <h1 class="contact-info__title">Contact Us</h1>
-                <address class="contact-info__address">
-                    <p class="contact-info__company"><strong>RapidRush Adventures</strong></p>
-                    <p class="contact-info__address-text">123 River Road<br>Rapidsville, CO 80401</p>
-                    <p class="contact-info__phone">Phone: <a href="tel:+13035551234" class="contact-info__link">(303) 555-1234</a></p>
-                    <p class="contact-info__email">Email: <a href="mailto:info@rapidrushadventures.com" class="contact-info__link">info@rapidrushadventures.com</a></p>
+        <section class="hero">
+            <div class="container">
+                <img src="images/hero-image.jpg" alt="White water rafting adventure" class="hero__image">
+                <img src="images/team-photo.jpg" alt="Our professional rafting team" class="hero__team-image">
+            </div>
+        </section>
+        
+        <section class="section contact">
+            <div class="container">
+                <h1 class="section__title">Contact Us</h1>
+                <address class="contact__address">
+                    <p class="contact__company"><strong>RapidRush Adventures</strong></p>
+                    <p class="contact__address-text">123 River Road<br>Rapidsville, CO 80401</p>
+                    <p class="contact__phone">Phone: <a href="tel:+13035551234" class="contact__link">(303) 555-1234</a></p>
+                    <p class="contact__email">Email: <a href="mailto:info@rapidrushadventures.com" class="contact__link">info@rapidrushadventures.com</a></p>
                 </address>
-            </article>
-            
-            <section class="map-section">
-                <h2 class="map-section__title">Send us a Message</h2>
-                <div class="map-section__container">
+                
+                <div class="map-section">
+                    <h2 class="section__title">Find Us</h2>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.398!2d-105.017!3d39.739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDQ0JzIwLjQiTiAxMDXCsDAxJzAxLjIiVw!5e0!3m2!1sen!2sus!4v1234567890"
                         width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy"
@@ -46,105 +48,111 @@
                         title="RapidRush Adventures Location" class="map-section__iframe">
                     </iframe>
                 </div>
-            </section>
-        </div>
-        
-        <article class="team">
-            <h2 class="team__title">Meet Our Team</h2>
-            <div class="team__grid">
-                <figure class="team__member">
-                    <img src="images/employee1.jpg" alt="Emily Rivers - Lead Guide" class="team__image">
-                    <figcaption class="team__caption">
-                        Emily Rivers<br>
-                        <small class="team__role">Lead Guide</small>
-                    </figcaption>
-                </figure>
-                <figure class="team__member">
-                    <img src="images/employee2.jpg" alt="Jake Rapids - Safety Coordinator" class="team__image">
-                    <figcaption class="team__caption">
-                        Jake Rapids<br>
-                        <small class="team__role">Safety Coordinator</small>
-                    </figcaption>
-                </figure>
-                <figure class="team__member">
-                    <img src="images/employee3.jpg" alt="Samantha Brooks - Customer Relations" class="team__image">
-                    <figcaption class="team__caption">
-                        Samantha Brooks<br>
-                        <small class="team__role">Customer Relations</small>
-                    </figcaption>
-                </figure>
             </div>
-        </article>
+        </section>
         
-        <form action="/action_page.php" method="post" class="form">
-            <fieldset class="form__fieldset">
-                <legend class="form__legend">Subscribe to our Newsletter</legend>
-                
-                <div class="form__group">
-                    <label for="fname" class="form__label">First Name:</label>
-                    <input type="text" id="fname" name="fname" placeholder="First name" required class="form__input">
+        <section class="section team">
+            <div class="container">
+                <h2 class="section__title">Meet Our Team</h2>
+                <div class="team__grid">
+                    <figure class="team__member">
+                        <img src="images/employee1.jpg" alt="Emily Rivers - Lead Guide" class="team__image">
+                        <figcaption class="team__caption">
+                            Emily Rivers<br>
+                            <small class="team__role">Lead Guide</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="team__member">
+                        <img src="images/employee2.jpg" alt="Jake Rapids - Safety Coordinator" class="team__image">
+                        <figcaption class="team__caption">
+                            Jake Rapids<br>
+                            <small class="team__role">Safety Coordinator</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="team__member">
+                        <img src="images/employee3.jpg" alt="Samantha Brooks - Customer Relations" class="team__image">
+                        <figcaption class="team__caption">
+                            Samantha Brooks<br>
+                            <small class="team__role">Customer Relations</small>
+                        </figcaption>
+                    </figure>
                 </div>
-                
-                <div class="form__group">
-                    <label for="lname" class="form__label">Last Name:</label>
-                    <input type="text" id="lname" name="lname" placeholder="Last name" required class="form__input">
-                </div>
-                
-                <div class="form__group">
-                    <label for="email" class="form__label">Email Address:</label>
-                    <input type="email" id="email" name="email" placeholder="Please enter your email" required class="form__input">
-                </div>
-                
-                <div class="form__group">
-                    <span class="form__label">Preferred Trip Type:</span>
-                    <div class="form__radio-group">
-                        <input type="radio" id="family" name="trip-type" value="family" class="form__radio">
-                        <label for="family" class="form__radio-label">Family Adventure</label>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="container">
+                <form action="/action_page.php" method="post" class="form">
+                    <fieldset class="form__fieldset">
+                        <legend class="form__legend">Subscribe to our Newsletter</legend>
                         
-                        <input type="radio" id="extreme" name="trip-type" value="extreme" class="form__radio">
-                        <label for="extreme" class="form__radio-label">Extreme Rapids</label>
+                        <div class="form__group">
+                            <label for="fname" class="form__label">First Name:</label>
+                            <input type="text" id="fname" name="fname" placeholder="First name" required class="form__input">
+                        </div>
                         
-                        <input type="radio" id="scenic" name="trip-type" value="scenic" class="form__radio">
-                        <label for="scenic" class="form__radio-label">Scenic Float</label>
-                    </div>
-                </div>
-
-                <div class="form__group">
-                    <span class="form__label">Preferred Trip Duration:</span>
-                    <div class="form__checkbox-group">
-                        <input type="checkbox" id="half-day" name="duration" value="half-day" class="form__checkbox">
-                        <label for="half-day" class="form__checkbox-label">Half Day</label>
-
-                        <input type="checkbox" id="full-day" name="duration" value="full-day" class="form__checkbox">
-                        <label for="full-day" class="form__checkbox-label">Full Day</label>
-
-                        <input type="checkbox" id="multi-day" name="duration" value="multi-day" class="form__checkbox">
-                        <label for="multi-day" class="form__checkbox-label">Multi-Day</label>
-                    </div>
-                </div>
-
-                <div class="form__group">
-                    <span class="form__label">Experience Level:</span>
-                    <div class="form__checkbox-group">
-                        <input type="checkbox" id="beginner" name="experience" value="beginner" class="form__checkbox">
-                        <label for="beginner" class="form__checkbox-label">Beginner</label>
+                        <div class="form__group">
+                            <label for="lname" class="form__label">Last Name:</label>
+                            <input type="text" id="lname" name="lname" placeholder="Last name" required class="form__input">
+                        </div>
                         
-                        <input type="checkbox" id="intermediate" name="experience" value="intermediate" class="form__checkbox">
-                        <label for="intermediate" class="form__checkbox-label">Intermediate</label>
+                        <div class="form__group">
+                            <label for="email" class="form__label">Email Address:</label>
+                            <input type="email" id="email" name="email" placeholder="Please enter your email" required class="form__input">
+                        </div>
                         
-                        <input type="checkbox" id="advanced" name="experience" value="advanced" class="form__checkbox">
-                        <label for="advanced" class="form__checkbox-label">Advanced</label>
-                    </div>
-                </div>
-                
-                <div class="form__group">
-                    <label for="message" class="form__label">Additional Comments:</label>
-                    <textarea id="message" name="message" placeholder="Tell us about your adventure preferences" rows="4" cols="50" class="form__textarea"></textarea>
-                </div>
-                
-                <button type="submit" class="form__button">Subscribe</button>
-            </fieldset>
-        </form>
+                        <div class="form__group">
+                            <span class="form__label">Preferred Trip Type:</span>
+                            <div class="form__radio-group">
+                                <input type="radio" id="family" name="trip-type" value="family" class="form__radio">
+                                <label for="family" class="form__radio-label">Family Adventure</label>
+                                
+                                <input type="radio" id="extreme" name="trip-type" value="extreme" class="form__radio">
+                                <label for="extreme" class="form__radio-label">Extreme Rapids</label>
+                                
+                                <input type="radio" id="scenic" name="trip-type" value="scenic" class="form__radio">
+                                <label for="scenic" class="form__radio-label">Scenic Float</label>
+                            </div>
+                        </div>
+
+                        <div class="form__group">
+                            <span class="form__label">Preferred Trip Duration:</span>
+                            <div class="form__checkbox-group">
+                                <input type="checkbox" id="half-day" name="duration" value="half-day" class="form__checkbox">
+                                <label for="half-day" class="form__checkbox-label">Half Day</label>
+
+                                <input type="checkbox" id="full-day" name="duration" value="full-day" class="form__checkbox">
+                                <label for="full-day" class="form__checkbox-label">Full Day</label>
+
+                                <input type="checkbox" id="multi-day" name="duration" value="multi-day" class="form__checkbox">
+                                <label for="multi-day" class="form__checkbox-label">Multi-Day</label>
+                            </div>
+                        </div>
+
+                        <div class="form__group">
+                            <span class="form__label">Experience Level:</span>
+                            <div class="form__checkbox-group">
+                                <input type="checkbox" id="beginner" name="experience" value="beginner" class="form__checkbox">
+                                <label for="beginner" class="form__checkbox-label">Beginner</label>
+                                
+                                <input type="checkbox" id="intermediate" name="experience" value="intermediate" class="form__checkbox">
+                                <label for="intermediate" class="form__checkbox-label">Intermediate</label>
+                                
+                                <input type="checkbox" id="advanced" name="experience" value="advanced" class="form__checkbox">
+                                <label for="advanced" class="form__checkbox-label">Advanced</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="message" class="form__label">Additional Comments:</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your adventure preferences" rows="4" cols="50" class="form__textarea"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form__button">Subscribe</button>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
     </main>
     
     <footer class="footer">
