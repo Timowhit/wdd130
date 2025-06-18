@@ -562,6 +562,7 @@ p {
         grid-template-columns: 1fr;
     }
     
-    .team__grid {
-        grid-template-columns: 1fr;
-    }}
+        .team__grid {
+            grid-template-columns: 1fr;
+        }
+    }
