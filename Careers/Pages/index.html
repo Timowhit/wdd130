@@ -55,13 +55,9 @@
                     
                     <div class="code-panel">
                         <div class="code-label">Backend Code</div>
-                        <pre class="code-block"><code>&lt;button class="demo-button" 
-  onclick="this.textContent = 
-    this.textContent === 'Click Me!' 
-    ? 'Clicked!' 
-    : 'Click Me!'"&gt;
-  Click Me!
-&lt;/button&gt;</code></pre>
+                        <pre class="code-block"><code>&lt;button class="demo-button";<br>   onclick="this.textContent = <br>    this.textContent === 'Click Me!' <br>    ? 'Clicked!' <br>    : 'Click Me!'"&gt;<br>  Click Me!<br>&lt;/button&gt;
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div>
@@ -88,24 +84,7 @@
                     
                     <div class="code-panel">
                         <div class="code-label">Backend Code</div>
-                        <pre class="code-block"><code>function addListItem() {
-  const container = 
-    document.getElementById('listContainer');
-  const item = 
-    document.createElement('div');
-  item.textContent = 
-    `Item ${container.children.length + 1}`;
-  container.appendChild(item);
-}
-
-function removeListItem() {
-  const container = 
-    document.getElementById('listContainer');
-  if (container.lastChild) {
-    container.removeChild(container.lastChild);
-  }
-}
-}</code></pre>
+                        <pre class="code-block"><code>function addListItem() {<br>  const container = document.getElementById('listContainer');<br>  const item = document.createElement('div');<br>  item.textContent = `Item ${container.children.length + 1}`;<br>  container.appendChild(item);<br>}<br><br>function removeListItem() {<br>  const container = document.getElementById('listContainer');<br>  if (container.lastChild) {<br>    container.removeChild(container.lastChild);<br>  }<br>}<br></code></pre>
                     </div>
                 </div>
             </div>

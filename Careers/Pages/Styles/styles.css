@@ -274,7 +274,8 @@ nav a:focus {
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* Project Slide */
@@ -298,7 +299,60 @@ nav a:focus {
         transform: translateY(0);
     }
 }
+.project-slide {
+    display: none;
+    padding: 30px;
+    position: absolute;  /* NEW - allows slides to overlap for sliding effect */
+    width: 100%;         /* NEW */
+    left: 0;             /* NEW */
+    top: 0;              /* NEW */
+}
 
+.project-slide.active {
+    display: block;
+    animation: slideInFromRight 0.6s ease-out;  /* CHANGED - was fadeIn 0.5s */
+}
+
+.project-slide.slide-out-left {        /* NEW CLASS */
+    animation: slideOutToLeft 0.6s ease-out;
+}
+
+.project-slide.slide-out-right {       /* NEW CLASS */
+    animation: slideOutToRight 0.6s ease-out;
+}
+
+@keyframes slideInFromRight {          /* NEW ANIMATION */
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutToLeft {            /* NEW ANIMATION */
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideOutToRight {           /* NEW ANIMATION */
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
 /* Project Header */
 .project-header {
     margin-bottom: 30px;
